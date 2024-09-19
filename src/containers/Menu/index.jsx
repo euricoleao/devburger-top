@@ -1,17 +1,48 @@
-import { useNavigate } from 'react-router-dom';
+import {   useLocation, useNavigate } from 'react-router-dom';
 import { CardProducts } from '../../components/CardProducts';
 import { api } from '../../services/api';
 import { formatPrice } from '../../utils/formatPrice';
-import { Container, Banner, CategoryMenu, ProducstsContainer, CategoryButton } from './styles'
+import  SetaVolta from '../../assets/de-volta.png'
+import { Link as TopLink } from 'react-router-dom';
+
+import { 
+    Container,
+    Banner, 
+    CategoryMenu, 
+    ProducstsContainer, 
+    CategoryButton,
+    
+   
+    
+      } from './styles'
 import { useEffect, useState } from 'react';
+
 
 export function Menu() {
     const [categories, setCategories] = useState([]);
     const [products, setProducts] = useState([]);
     const [filteredProducts, setFilteredProducts] = useState([]);
-    const [activeCategory, setActiveCategory] = useState([]);
+   
 
     const navigate = useNavigate();
+
+   const { search} = useLocation();
+
+   const queryParams = new URLSearchParams(search);
+
+   const [activeCategory, setActiveCategory] = useState( () => {
+    const categoryId = +queryParams.get('categoria');
+
+    if(categoryId) {
+        return categoryId
+    }
+    return 0;
+
+
+   });
+
+
+   
 
     useEffect(() => { /* chamada api para categorias  */
 
@@ -60,6 +91,7 @@ export function Menu() {
     return (
 
         <Container>
+           
             <Banner>
                 <h1>
                     O MELHOR <br />
@@ -100,8 +132,8 @@ export function Menu() {
                     <CardProducts product={product} key={product.id}/>
                     
                 ))}
-                
-            </ProducstsContainer>
+               <a> <TopLink to="/"> <img className='seta' src={SetaVolta} alt="logo- do login"/> </TopLink> </a>
+            </ProducstsContainer> 
 
         </Container>
     );

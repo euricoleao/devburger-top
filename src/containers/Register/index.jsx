@@ -16,7 +16,7 @@ import {
     Title,
     Form,
     InputContainer,
-    Link
+    Link,
 } from "./styles";
 
 

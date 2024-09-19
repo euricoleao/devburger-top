@@ -98,10 +98,6 @@ margin-bottom: 10px;
  }
 `;
 
-
-
-
-
 export const Link = styled(ReactLink)`
   text-decoration: none;
   cursor: pointer;

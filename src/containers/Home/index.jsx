@@ -4,8 +4,8 @@ import  { OffersCarousel } from "../../components/OffersCarousel";
 
 
 
-export function Home() {
 
+export function Home() {
   return (
     
     <main>

@@ -4,12 +4,25 @@ import { Login } from "../containers/Login";
 import  { Register } from "../containers/Register"
 import { Home } from "../containers/Home";
 import { Menu } from "../containers/Menu";
+import { Cart } from "../containers/Cart";
+
+//import {PrivateRoute} from "./private-route";
+
+
 
 export const router = createBrowserRouter([
-    
+   /* 
     {
         path:'/',
-        element: <Home />,
+        element: <PrivateRoute />,
+        children:[
+          
+        ],
+    },*/
+
+    {
+        path:'/',
+        element: <Home /> ,
     },
     
     
@@ -26,4 +39,11 @@ export const router = createBrowserRouter([
         path:'/cardapio',
         element: <Menu />,
     },
+
+    {
+        path: '/carrinho',
+        element: <Cart />,
+    },
+
+   
 ]);

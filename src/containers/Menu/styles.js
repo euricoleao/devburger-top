@@ -4,6 +4,7 @@ import FundoClaro from '../../assets/backgroudbr.svg';
 import { Link } from "react-router-dom";
 
 
+
 export const Container =styled.div`
 width: 100%;
 min-height:100vh ;
@@ -81,6 +82,23 @@ max-width: 1280px;
 gap: 60px;
 margin: 50px auto;
 
+ .seta {
+    width: 50px;
+   position: absolute;
+   top: 500px;
+   left: 100px;
+   border-radius: 15px;
+   background-color: #9758a6;
+
+   &:hover {
+     background-color:#6f357c ;
+     width: 55px;
+
+   }
+ }
+
 `;
+
+
 
 
