@@ -17,11 +17,21 @@ export const CartItems = styled.div`
 
 `;
 
+export const Wrapper = styled.div`
+display: flex;
+justify-content: space-evenly;
+margin-top: 30px;
+padding-bottom: 30px;
+`;
+
 
 export const CartImg = styled.div`
    background: url('${ CartLogo}');
    background-size: cover;
    background-position: center;
    height: 480px;
+
+`;
+export const CartResume = styled.div`
 
 `;

@@ -1,6 +1,7 @@
 
 import { CartItems } from "../../components/CartItems";
-import {CartImg , Container } from "./styles";
+import  { CartResume } from "../../components/CartResume"
+import {CartImg , Container,Wrapper } from "./styles";
 
 
 
@@ -8,10 +9,13 @@ export function Cart() {
   return (
     
  <Container >
-      <CartImg>
+ 
+      <CartImg />
     
-      </CartImg>
+      <Wrapper>
       <CartItems/>
+      <CartResume />
+      </Wrapper>
  </Container>
   );
 

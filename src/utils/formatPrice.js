@@ -6,3 +6,4 @@ export const formatPrice = (value) => {
         currency: 'BRL',
     }).format(value / 100);
 };
+
