@@ -1,28 +1,32 @@
 import { createBrowserRouter } from "react-router-dom";
+import { Cart, Home , Register, Login ,Menu, Checkout, CompletePayment, Admin,} from "../containers";
+import { Header } from "../components";
+import { Footer } from "../components/Footer";
 
-import { Login } from "../containers/Login";
-import  { Register } from "../containers/Register"
-import { Home } from "../containers/Home";
-import { Menu } from "../containers/Menu";
-import { Cart } from "../containers/Cart";
 
 //import {PrivateRoute} from "./private-route";
 
 
 
-export const router = createBrowserRouter([
-   /* 
-    {
-        path:'/',
-        element: <PrivateRoute />,
-        children:[
-          
-        ],
-    },*/
 
+export const router = createBrowserRouter([
+   
+  
+     {
+      path:'/path',
+       element:<Admin />
+     },
+    
+   
     {
         path:'/',
-        element: <Home /> ,
+         element: (
+           <>
+           <Header />
+         <Home /> 
+          <Footer />
+        </> 
+        ),
     },
     
     
@@ -37,12 +41,27 @@ export const router = createBrowserRouter([
 
     {
         path:'/cardapio',
-        element: <Menu />,
+        element: (
+           <>
+           <Header />,
+         <Menu /> ,
+        </> 
+        ),
     },
 
     {
         path: '/carrinho',
         element: <Cart />,
+    },
+
+    {
+        path: '/checkout',
+        element: <Checkout />,
+    },
+
+    {
+        path: '/complete',
+        element: <CompletePayment />,
     },
 
    

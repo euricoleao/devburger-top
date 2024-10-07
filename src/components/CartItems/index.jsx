@@ -3,9 +3,11 @@ import {  Container, Header, Body, EmptyCart, Button  } from './styles';
 import { useCart } from '../../hooks/CartContext';
 import { formatPrice } from '../../utils/formatPrice';
 import   Bin from '../../assets/bin.png';
+import CartVazio from '../../assets/cartuser.png';
+
 
 export function CartItems() {
-    const { cartProducts,increaseProducts,decreaseProducts } = useCart();
+    const { cartProducts,increaseProducts,decreaseProducts,deleteProducts } = useCart();
 
     console.log(cartProducts)
     return (
@@ -13,10 +15,10 @@ export function CartItems() {
 
             <Header>
                 <p></p>
-                <p>Itens</p>
-                <p>Preço</p>
+                <p style={{marginLeft :30}}>Itens</p>
+                <p style={{marginLeft :33}}>Preço</p>
                 <p style={{marginRight :20}}>Quantidade</p>
-                <p>Total</p>
+                <p style={{marginLeft :20}}>Total</p>
                 
             </Header>
             
@@ -35,13 +37,15 @@ export function CartItems() {
                     
                     <p>{formatPrice(product.quantity * product.price)} </p>
 
-                    <Button onClick={() => decreaseProducts(product.id)}>
-                        <img src={Bin } alt="lata-de-lixo" />
+                    <Button onClick={() => deleteProducts(product.id)}>
+                        <img src={Bin } alt="lata-de-lixo"  />
                     </Button>  
                 </Body>
             ))
         ) : (
-            <EmptyCart>Carrinho vazio</EmptyCart>
+            <EmptyCart >Carrinho vazio
+            <img src={CartVazio} alt="carrinho vazio" />
+            </EmptyCart>
         )}
             
             </Container>

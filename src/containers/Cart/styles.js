@@ -1,11 +1,11 @@
 import styled from "styled-components";
-import  CartLogo from "../../assets/logoCard.svg";
+import  CartLogo from "../../assets/logofund.svg";
 import FundoClaro from '../../assets/backgroudbr.svg';
 
 export const Container = styled.div`
 width: 100%;
 min-height:100vh ;
-background-color: #f0f0f0;
+background-color: #E2DDDDFF;
 background: linear-gradient(
    rgba(255, 255, 255, 0.0),
    rgba(255, 255, 255, 0.0)
@@ -26,10 +26,19 @@ padding-bottom: 30px;
 
 
 export const CartImg = styled.div`
+   display: flex;
+   align-items: center;
+   justify-content: center;
    background: url('${ CartLogo}');
    background-size: cover;
    background-position: center;
-   height: 480px;
+   height: 200px;
+
+   img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
 
 `;
 export const CartResume = styled.div`

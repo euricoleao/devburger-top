@@ -7,13 +7,19 @@ import { formatPrice } from "../../utils/formatPrice";
 import { useCart } from '../../hooks/CartContext';
 import {api} from '../../services/api';
 import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 
 
 export function CartResume() {
   const [finalPrice, setFinalPrice] = useState(0)
   const [deliveryTax] = useState(500)
 
-  const { cartProducts} = useCart();
+  const navigate = useNavigate();
+
+  const { cartProducts, clearCart} = useCart();
+
+
+
 
   useEffect(() =>{
     const sumAllItems = cartProducts.reduce( (acc, current) => {
@@ -23,16 +29,36 @@ export function CartResume() {
   }, [cartProducts, deliveryTax])
 
 const submitOrder = async () => {
-  const order = cartProducts.map(product => {
-      return { id: product.id, quantity: product.quantity }
-  })
+  const products = cartProducts.map(product => {
+      return {
+         id: product.id,
+          quantity: product.quantity ,
+          price: product.price,
+         };
+  });
 
-  await toast.promise( api.post('orders' , {products: order}),{
-   pending: 'Realizando seu Pedido....',
-   success: 'Pedido realizado com sucesso',
-   error: 'Falha ao tentar realizar o seu pedido, tente novamente'
-  })
+  
+  try {
+   const {data} = await api.post('/create-payment-intent', {products});
+  
+   navigate('/checkout',{
+    state: data,
+   });
+
+  } catch(err) {
+    toast.error('Erro, tente novamente!', {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+      });
+
   }
+};
 
   return (
    <div>

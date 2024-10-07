@@ -2,6 +2,7 @@
 import { CartItems } from "../../components/CartItems";
 import  { CartResume } from "../../components/CartResume"
 import {CartImg , Container,Wrapper } from "./styles";
+import LoCard from '../../assets/logocart.png';
 
 
 
@@ -10,7 +11,9 @@ export function Cart() {
     
  <Container >
  
-      <CartImg />
+      <CartImg >
+  <img src={LoCard} alt="" />
+      </CartImg>
     
       <Wrapper>
       <CartItems/>

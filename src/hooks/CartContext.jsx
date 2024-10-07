@@ -30,11 +30,16 @@ export const CartProvider = ({ children }) => {
          updateLocalStorage(newCartProducts)
     };
 
+   const clearCart = () => {
+    setCartProducts([]);
+    
+     updateLocalStorage([]);
+   };
+
     const deleteProducts = async productId => {
         const newCart = cartProducts.filter(product => product.id !== productId)
-        setCartProducts(newCart)
-
-        await updateLocalStorage(newCart)
+       await setCartProducts(newCart)
+        updateLocalStorage(newCart)
     }
 
     const increaseProducts = async productId => {
@@ -77,7 +82,7 @@ export const CartProvider = ({ children }) => {
 
     return (
 
-        <CartContext.Provider value={{ putProductInCart, cartProducts, increaseProducts, decreaseProducts }}>
+        <CartContext.Provider value={{ putProductInCart, cartProducts, increaseProducts, decreaseProducts ,deleteProducts,clearCart}}>
             {children}
         </CartContext.Provider>
     );

@@ -9,6 +9,7 @@ flex-direction: column;
 justify-content: space-between;
 
 .container-top {
+  
     display: grid;
     grid-gap: 10px 50px;
     grid-template-areas: 
@@ -19,8 +20,14 @@ justify-content: space-between;
 
 
 .title {
+   width: 100%;
+   height: 40px;
    grid-area :title ;
    margin-bottom: 20px;
+   color: #ffffff;
+   background-color: black;
+   border-radius: 15px 0 ;
+   text-align: center;
 }
 
 .items {

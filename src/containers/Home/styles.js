@@ -17,7 +17,7 @@ export const Banner = styled.div`
       color: #FFFF00;
       position: absolute;
       right: 63%;
-      top: 35%;
+      top: 70px;
 
    }
 `;

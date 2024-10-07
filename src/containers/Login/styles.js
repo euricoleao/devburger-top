@@ -12,7 +12,7 @@ align-items: center;
 `;
 export const LeftContainer = styled.div`
  display: flex;
- height:850px;
+ height:800px;
  width:600px;
  max-width: 50%;
  
@@ -22,7 +22,7 @@ export const LeftContainer = styled.div`
 export const RightContainer = styled.div`
  background: #373737;
  border-radius: 0 10px 10px 0;
- height:850px;
+ height:800px;
  width:600px;
  max-width: 50%;
  padding:  25px 75px;
