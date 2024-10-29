@@ -11,11 +11,11 @@ import stripePromise from './config/stripeConfig';
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     < AppProvider>
-    <Elements stripe={stripePromise}>
-   <RouterProvider router={router} />
-   </Elements>
-   <GlobalStyles/>
-   <ToastContainer autoClose={2000} theme='colored'/>
-   </AppProvider>
+      <Elements stripe={stripePromise}>
+        <RouterProvider router={router} />
+      </Elements>
+      <GlobalStyles />
+      <ToastContainer autoClose={2000} theme='colored' />
+    </AppProvider>
   </StrictMode>,
 )

@@ -1,22 +1,10 @@
 
-import { Navigate,Outlet } from "react-router-dom";
-import PropTypes from "prop-types";
+import  { useState } from "react";
+import { Navigate } from "react-router-dom";
 
-
-export function  PrivateRoute() {
-    const user = localStorage.getItem('devburger:userData')
-    if(!user) {
-        return <Navigate to="/login"replace />;
-    }
-    return(
-        <>
-        <Outlet />
-        </>
-    );
-    
-}
-PrivateRoute.propTypes = {
-    component: 
-    PropTypes.oneOfType([PropTypes.func,
-        PropTypes.element]),
+const PrivateRoute = ({ component: Component, authenticated, ...rest }) => {
+  // Add your authentication logic here
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  return isAuthenticated ? <Component {...rest} /> : <Navigate to="/login" replace />;
 };
+export default PrivateRoute;

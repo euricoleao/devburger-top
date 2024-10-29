@@ -43,7 +43,7 @@ console.log(userInfo);
     <PageLink to="/cardapio" $isActive={pathname === '/cardapio'}>Cardapio</PageLink>
 
   </ContainerLeft>
-
+  
   <ContainerRight>
     <PageLink to="/carrinho">
     <img src={Cart} alt="logo-usuario" />
@@ -52,7 +52,7 @@ console.log(userInfo);
     <PageLink >
     <img src={Person} alt="logo-carrinho" />
     </PageLink>
-   
+    
    <ContainerText>
     <p> Olá, <span>{userInfo.name}</span></p>
     <PageLinkExit onClick={logoutUser}>Sair</PageLinkExit>
