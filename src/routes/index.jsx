@@ -12,6 +12,35 @@ import { Footer } from "../components/Footer";
 export const router = createBrowserRouter([
 
 
+
+    {
+        path: '/login', element: <Login />,
+    },
+    {
+        path: '/cadastro',
+        element: <Register />,
+    },
+
+    {
+        path: '/',
+        element: (
+        <>
+            <Header />
+            <Home />
+            <Footer />
+        </>),                    //<Header /><Home /> <Footer />
+    },
+
+    {
+        path: '/cardapio',
+        element: (
+            <>
+                <Header />,
+                <Menu /> ,
+            </>
+        ),
+    },
+
     {
         path: '/pedidos',
         element: <Admin />
@@ -26,35 +55,6 @@ export const router = createBrowserRouter([
         path: '/adicinar-produto',
         element: <Admin />
 
-    },
-
-
-    {
-        path: '/',
-        element: (<>
-            <Header />
-            <Home />
-            <Footer />
-        </>),                    //<Header /><Home /> <Footer />
-    },
-
-
-    {
-        path: '/login', element: <Login />,
-    },
-    {
-        path: '/cadastro',
-        element: <Register />,
-    },
-
-    {
-        path: '/cardapio',
-        element: (
-            <>
-                <Header />,
-                <Menu /> ,
-            </>
-        ),
     },
 
 
