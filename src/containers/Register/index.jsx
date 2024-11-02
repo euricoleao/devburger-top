@@ -119,7 +119,7 @@ export function Register() {
                     <Button type="submit" style={{
                         marginTop: 50,
                         marginBottom: 25
-                    }}>Entrar</Button>
+                    }}>Cadastrar</Button>
                 </Form>
                 <p> Já pussui conta? <Link to="/login" >Clique aqui.</Link> </p>
             </RightContainer>
