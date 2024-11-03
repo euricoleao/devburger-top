@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import { Cart, Home, Register, Login, Menu, Checkout, CompletePayment, Admin } from "../containers";
-import { Header } from "../components";
+import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 
 
@@ -13,21 +13,6 @@ export const router = createBrowserRouter([
 
 
     {
-        index: true,
-        path: '/login',
-        element: <Login />
-    },
-
-    /*{
-       
-        path: '/login', element: <Login />,
-    },*/
-    {
-        path: '/cadastro',
-        element: <Register />,
-    },
-
-    {
         path: '/',
         element: (
         <>
@@ -36,6 +21,20 @@ export const router = createBrowserRouter([
             <Footer />
         </>),                    //<Header /><Home /> <Footer />
     },
+
+    {
+        
+        path: '/login',
+        element: <Login />
+    },
+
+
+    {
+        path: '/cadastro',
+        element: <Register />,
+    },
+
+   
 
     {
         path: '/cardapio',
