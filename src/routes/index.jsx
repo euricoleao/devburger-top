@@ -17,7 +17,9 @@ export const router = createBrowserRouter([
             <Header />
             <Home />
             <Footer />
-        </>),                    //<Header /><Home /> <Footer />
+           
+        </>
+        ),                    //<Header /><Home /> <Footer />
     },
 
     {
