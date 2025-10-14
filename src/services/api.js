@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export const api = axios.create({
-    baseURL: 'https://devburger-pa-production.up.railway.app',
+    baseURL: 'https://vercel.com/erisvaldos-projects/devburger-pa/EBATzVH1opCjmSJ3gTG3qNQyUxiS',
 });
 
 api.interceptors.request.use( (config) => {
